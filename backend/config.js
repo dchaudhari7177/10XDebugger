@@ -1,0 +1,3 @@
+JWT_SECRET="YOUVACANTXXTYUIII)(*&";
+
+module.exports={JWT_SECRET};
