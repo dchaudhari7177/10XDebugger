@@ -6,6 +6,8 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const {JWT_SERCET}=require("../config");
 const bcrypt = require('bcrypt');
+const sendMailNotification = require('../sendMail');
+const { default: axios } = require('axios');
 
 
 router.post("/signup",async (req,res)=>{
@@ -56,7 +58,7 @@ router.post("/signin", async (req, res) => {
                 message: "Invalid Data | Check Data"
             });
         }
-        
+
         const { email, phone, password } = data;   
         const user = await User.findOne({
             $or: [{ email }, { phone }]
@@ -89,6 +91,25 @@ router.post("/signin", async (req, res) => {
         });
     }
 });
+
+router.get("/xx",async (req,res)=>{
+    // await sendMailNotification("prathameshkothalkar9021@gmail.com","sfghgfhg");
+    // res.send("sended");
+    try{
+        const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
+            params: {
+                q: 'PUNE', // Replace with your city or location
+                appid: '498295b20f96fcb697093ffec40b9c6f' // Replace with your weather API key
+            }
+        });
+        console.log(response.data);
+    }
+    catch(e){
+        console.log(e)
+    }
+   
+
+})
 
 
 
