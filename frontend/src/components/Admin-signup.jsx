@@ -17,7 +17,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-between bg-gradient-to-r from-green-400 to-blue-600 p-6">
+    <div className="min-h-screen flex items-center justify-between bg-gradient-to-r from-yellow-400 to-orange-600 p-6">
       {/* Left Side - Project Information */}
       <div className="w-1/2 text-white p-8">
         <motion.h1 
@@ -82,7 +82,7 @@ const Signup = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
           >
-            Sign Up
+           Admin Sign Up
           </motion.h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <motion.div
@@ -97,8 +97,8 @@ const Signup = () => {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-400 transition duration-300"
-                whileFocus={{ scale: 1.05, borderColor: "#34d399", boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)" }}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400 transition duration-300"
+                whileFocus={{ scale: 1.05, borderColor: "#f97316", boxShadow: "0 0 10px rgba(249, 115, 22, 0.5)" }}
                 required
               />
             </motion.div>
@@ -114,8 +114,8 @@ const Signup = () => {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-400 transition duration-300"
-                whileFocus={{ scale: 1.05, borderColor: "#34d399", boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)" }}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400 transition duration-300"
+                whileFocus={{ scale: 1.05, borderColor: "#f97316", boxShadow: "0 0 10px rgba(249, 115, 22, 0.5)" }}
                 required
               />
             </motion.div>
@@ -131,8 +131,8 @@ const Signup = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-400 transition duration-300"
-                whileFocus={{ scale: 1.05, borderColor: "#34d399", boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)" }}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400 transition duration-300"
+                whileFocus={{ scale: 1.05, borderColor: "#f97316", boxShadow: "0 0 10px rgba(249, 115, 22, 0.5)" }}
                 required
               />
             </motion.div>
@@ -148,14 +148,14 @@ const Signup = () => {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-400 transition duration-300"
-                whileFocus={{ scale: 1.05, borderColor: "#34d399", boxShadow: "0 0 10px rgba(52, 211, 153, 0.5)" }}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400 transition duration-300"
+                whileFocus={{ scale: 1.05, borderColor: "#f97316", boxShadow: "0 0 10px rgba(249, 115, 22, 0.5)" }}
                 required
               />
             </motion.div>
             <motion.button
               type="submit"
-              className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-200"
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition duration-200"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -169,7 +169,7 @@ const Signup = () => {
             transition={{ delay: 1.3, duration: 0.5 }}
           >
             Already have an account?{' '}
-            <a href="/login" className="text-green-500 hover:underline">Login</a>
+            <a href="/Admin-login" className="text-orange-500 hover:underline">Login</a>
           </motion.p>
         </motion.div>
       </div>
