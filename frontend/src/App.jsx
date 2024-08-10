@@ -1,4 +1,4 @@
-import React from 'react/client';
+import React from 'react/';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './components/Login';
 
