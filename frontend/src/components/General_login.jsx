@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const Login = () => {
+const login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -62,7 +62,7 @@ const Login = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
           >
-            Login
+           General Login
           </motion.h2>
           <form onSubmit={handleSubmit} className="space-y-8">
             <motion.div
@@ -115,7 +115,7 @@ const Login = () => {
             transition={{ delay: 1, duration: 0.5 }}
           >
             Don't have an account?{' '}
-            <a href="/signup" className="text-blue-500 hover:underline">Sign up</a>
+            <a href="/General-signup" className="text-blue-500 hover:underline">Sign up</a>
           </motion.p>
         </motion.div>
       </div>
@@ -123,4 +123,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default login;
