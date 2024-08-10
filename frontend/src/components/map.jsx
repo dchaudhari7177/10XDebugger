@@ -4,26 +4,25 @@ import 'leaflet/dist/leaflet.css';
 
 const Map = () => {
   const [position, setPosition] = useState([51.505, -0.09]); // Default position (London)
+  const [coordinates, setCoordinates] = useState({ lat: 51.505, lng: -0.09 });
 
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (pos) => {
-          const { latitude, longitude } = pos.coords;
+        (location) => {
+          const { latitude, longitude } = location.coords;
           setPosition([latitude, longitude]);
+          setCoordinates({ lat: latitude, lng: longitude });
         },
-        (err) => {
-          console.error(err);
-          alert('Unable to fetch your location. Default location will be used.');
+        (error) => {
+          console.error("Error fetching location:", error);
         }
       );
-    } else {
-      alert('Geolocation is not supported by your browser.');
     }
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
       <MapContainer 
         center={position} 
         zoom={13} 
@@ -40,6 +39,15 @@ const Map = () => {
           </Popup>
         </Marker>
       </MapContainer>
+
+      <div className="mt-4 bg-white p-4 rounded-lg shadow-md">
+        <p className="text-gray-700">
+          <strong>Latitude:</strong> {coordinates.lat}
+        </p>
+        <p className="text-gray-700">
+          <strong>Longitude:</strong> {coordinates.lng}
+        </p>
+      </div>
     </div>
   );
 };
