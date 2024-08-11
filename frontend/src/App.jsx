@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Home from './components/Home'; // Import Home component
 import GeneralLogin from './components/General_login';
 import GeneralSignup from './components/General_signup';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Admin-signup" element={<Signup />} />
           <Route path="/map" element={<Map />} />
           <Route path="/weather" element={<Weather />} />
+          <Route path="/admin-dashboard" component={AdminDashboard} />
         </Routes>
       </div>
       <Footer />
